@@ -412,7 +412,7 @@ public class BeanstalkClient {
             String controlResponse = con.readControlResponse();
             log.debug(controlResponse);
 
-            if (!controlResponse.startsWith("NOT_FOUND")) {
+            if (controlResponse.startsWith("NOT_FOUND")) {
                 throw new BeanstalkException(controlResponse);
             }
 
