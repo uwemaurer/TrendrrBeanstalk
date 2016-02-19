@@ -1,13 +1,31 @@
-apply from: '../deps.gradle'
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'distribution'
+
+repositories {
+  jcenter() 
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.11'
+}
+
+version = '1.1'
+
 sourceSets {
 	main {
 		java {
 				srcDirs = ['src']
 		}
 	}
+	test {
+		java {
+				srcDirs = ['srctest']
+		}
+	}
 }
-dependencies {
-	compile libCommonsLogging
 
+dependencies {
+	compile 'commons-logging:commons-logging:1.2'
 }
 

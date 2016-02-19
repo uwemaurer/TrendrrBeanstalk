@@ -1,6 +1,4 @@
-/**
- * 
- */
+package com.trendrr.beanstalk.example;
 
 
 import org.apache.commons.logging.Log;
